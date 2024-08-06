@@ -1,0 +1,25 @@
+.auth {
+    $self: &;
+    min-height: 68rem;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 6.25rem 7.5rem;
+
+    &--login {
+        background-image: url("/assets/images/login-background.png");
+    }
+
+    &--recover {
+        background-image: url("/assets/images/recover-password-background.png");
+    }
+
+    &__card {
+        width: 48rem;
+        background-color: var(--color-primary-0);
+        box-shadow: 0 0.4rem 4.2rem 0 rgba(0, 0, 0, 0.25);
+        border: 2px solid var(--color-secondary-60);
+        border-radius: 1.6rem;
+        padding: 3.2rem;
+    }
+}

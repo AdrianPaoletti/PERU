@@ -1,0 +1,9 @@
+<section
+    class="auth"
+    [class.auth--login]="isLogin"
+    [class.auth--recover]="!isLogin"
+>
+    <article class="auth__card">
+        <ng-content></ng-content>
+    </article>
+</section>

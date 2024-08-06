@@ -1,0 +1,15 @@
+<div class="input" [formGroup]="formGroup">
+    <label [for]="inputData.id" class="input__label">{{
+        inputData.label
+    }}</label>
+    <input
+        [type]="inputData.type"
+        [name]="inputData.id"
+        [placeholder]="inputData.placeholder"
+        [class.input__field--full-width]="fullWidth"
+        [formControlName]="inputData.id"
+        class="input__field"
+        autocomplete="off"
+    />
+    <span class="input__error-message"></span>
+</div>

@@ -1,0 +1,21 @@
+$_font-family: "DMSans, Arial, sans-serif";
+
+:root {
+    --font-family: #{$_font-family};
+
+    --font-xxxl-title: 7.2rem / 9.6rem #{$_font-family};
+    --font-xxl-title: 6.4rem / 7.2rem #{$_font-family};
+    --font-xl-title: 5.6rem / 7.2rem #{$_font-family};
+    --font-l-title: 4rem / 6.4rem #{$_font-family};
+    --font-m-title: 3.6rem / 4.8rem #{$_font-family};
+    --font-sm-title: 3.2rem / 4rem #{$_font-family};
+    --font-s-title: 2.8rem / 3.6rem #{$_font-family};
+    --font-xs-title: 2.4rem / 3.2rem #{$_font-family};
+    --font-xxs-title: 2rem / 2.8rem #{$_font-family};
+    --font-xxxs-title: 1.8rem / 2.4rem #{$_font-family};
+
+    --font-l-text: 1.6rem / 2.1rem #{$_font-family};
+    --font-m-text: 1.4rem / 1.8rem #{$_font-family};
+    --font-sm-text: 1.3rem / 1.6rem #{$_font-family};
+    --font-s-text: 1.2rem / 1.4rem #{$_font-family};
+}

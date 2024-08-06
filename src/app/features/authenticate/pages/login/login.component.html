@@ -1,0 +1,30 @@
+<app-auth-wrapper
+    ><h1 class="login__title">Inicia sesión</h1>
+    <p class="login__sub-title">
+        Ingresa tu número de identificación y contraseña para acceder a tu
+        portal de gestión de ventas.
+    </p>
+    <form
+        class="login__form"
+        autocomplete="off"
+        [formGroup]="loginForm"
+        (ngSubmit)="handleSubmit()"
+    >
+        @for (input of inputsData; track input.id) {
+            <app-input
+                [inputData]="input"
+                [fullWidth]="true"
+                [formGroup]="loginForm"
+                class="login__input"
+            />
+        }
+        <div class="login__check-forget">
+            <app-checkbox label="Recuérdame" id="rememberMe" />
+        </div>
+        <app-button
+            type="submit"
+            variant="primary"
+            buttonText="Ingresar"
+            class="login__button"
+        /></form
+></app-auth-wrapper>

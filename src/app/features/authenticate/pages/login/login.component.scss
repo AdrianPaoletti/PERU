@@ -1,0 +1,36 @@
+.login {
+    $self: &;
+
+    &__title {
+        font: var(--font-m-title);
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 0.8rem;
+    }
+
+    &__sub-title {
+        font: var(--font-m-text);
+        text-align: center;
+        padding-bottom: 2.8rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        #{$self}__input {
+            &:not(:last-child) {
+                padding-bottom: 2.4rem;
+            }
+        }
+
+        #{$self}__check-forget {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__button {
+        text-align: center;
+    }
+}

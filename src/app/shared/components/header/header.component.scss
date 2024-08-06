@@ -1,0 +1,16 @@
+.header {
+    $self: &;
+    display: flex;
+    align-items: center;
+    padding: 2.4rem;
+
+    &--auth {
+        justify-content: center;
+    }
+
+    &__logo-enterprise {
+        width: 15rem;
+        height: 4.5rem;
+        background-color: #737373;
+    }
+}

@@ -1,0 +1,8 @@
+<header class="header" [class.header--auth]="isAuthRoute">
+    @if (isAuthRoute) {
+        <div class="header__logo-enterprise"></div>
+        <img src="assets/svg/logo-mapfre-red.svg" alt="logo-mapfre" />
+    } @else {
+        <div></div>
+    }
+</header>
