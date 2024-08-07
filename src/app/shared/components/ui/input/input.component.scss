@@ -1,5 +1,6 @@
 .input {
     $self: &;
+    position: relative;
 
     &__label {
         font: var(--font-m-text);
@@ -20,8 +21,25 @@
             width: 100%;
         }
 
+        &--error {
+            border-color: var(--color-primary-40);
+        }
+
         &::placeholder {
             color: var(--color-secondary-120);
+        }
+    }
+
+    &__error {
+        position: absolute;
+        bottom: -2.4rem;
+        display: flex;
+        align-items: center;
+
+        #{$self}__error-message {
+            font: var(--font-s-text);
+            color: var(--color-primary-40);
+            padding-left: 0.4rem;
         }
     }
 }

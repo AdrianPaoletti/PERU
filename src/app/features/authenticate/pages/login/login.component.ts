@@ -13,6 +13,7 @@ import { CheckboxComponent } from '../../../../shared/components/ui/checkbox/che
 import { InputComponent } from '../../../../shared/components/ui/input/input.component';
 import { InputData } from '../../../../shared/types/input';
 import { AuthWrapperComponent } from '../../components/auth-wrapper/auth-wrapper.component';
+import { LoginService } from '../../services/login.service';
 
 @Component({
     selector: 'app-login',
@@ -22,40 +23,27 @@ import { AuthWrapperComponent } from '../../components/auth-wrapper/auth-wrapper
         ButtonComponent,
         InputComponent,
         CheckboxComponent,
-
         ReactiveFormsModule,
     ],
+    providers: [LoginService],
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-    readonly inputsData: InputData[] = [
-        {
-            id: 'document',
-            label: 'Tipo de documento',
-            placeholder: 'Ingresa tu documento de identidad',
-            errorText: 'El documento no es valido',
-            type: 'text',
-        },
-        {
-            id: 'password',
-            label: 'Contraseña',
-            placeholder: 'Ingresa tu contraseña',
-            errorText: 'La contraseña es incorrecta',
-            type: 'password',
-        },
-    ];
-
+    inputsData!: InputData[];
     loginForm!: FormGroup;
+    isChecked: boolean = false;
 
     constructor(
         private readonly _enterpriseService: EnterpriseService,
+        private readonly _loginService: LoginService,
         private readonly _formBuilder: FormBuilder,
     ) {
         this.loginForm = this._formBuilder.group({
             document: [null, [Validators.required]],
             password: [null, [Validators.required]],
         });
+        this.inputsData = this._loginService.inputsData;
     }
 
     ngOnInit(): void {
@@ -64,6 +52,11 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 (enterpriseName) => (SessionConfig.enterprise = enterpriseName),
             );
+    }
+
+    handleCheck(isChecked: boolean): void {
+        console.log('hola', isChecked);
+        this.isChecked = isChecked;
     }
 
     handleSubmit(): void {

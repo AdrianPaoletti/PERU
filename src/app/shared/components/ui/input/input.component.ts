@@ -14,4 +14,5 @@ export class InputComponent {
     @Input() inputData!: InputData;
     @Input() fullWidth: boolean = false;
     @Input() formGroup!: FormGroup;
+    @Input() isError: boolean = false;
 }

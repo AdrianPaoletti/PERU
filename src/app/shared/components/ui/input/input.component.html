@@ -7,9 +7,15 @@
         [name]="inputData.id"
         [placeholder]="inputData.placeholder"
         [class.input__field--full-width]="fullWidth"
+        [class.input__field--error]="fullWidth"
         [formControlName]="inputData.id"
         class="input__field"
         autocomplete="off"
     />
-    <span class="input__error-message"></span>
+    @if (isError) {
+        <div class="input__error">
+            <img src="assets/svg/error-exclamation.svg" alt="error icon" />
+            <span class="input__error-message">Lorem ipsum</span>
+        </div>
+    }
 </div>

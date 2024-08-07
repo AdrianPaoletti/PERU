@@ -1,11 +1,5 @@
-<div class="checkbox">
-    <label [for]="id"
-        ><input type="checkbox" [id]="id" [name]="id" />
-        <div
-            class="checkbox__check"
-            [class.checkbox__check--is-checked]="true"
-        ></div>
-        {{ label }}</label
-    >
-    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox -->
-</div>
+<label [for]="id" (click)="handleClick()" role="region" aria-hidden="true"
+    >{{ label
+    }}<input type="checkbox" [id]="id" [name]="id" [checked]="isChecked" />
+    <span class="checkmark"></span>
+</label>

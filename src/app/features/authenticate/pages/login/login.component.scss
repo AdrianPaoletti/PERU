@@ -19,14 +19,26 @@
         flex-direction: column;
 
         #{$self}__input {
-            &:not(:last-child) {
-                padding-bottom: 2.4rem;
+            &:first-child {
+                padding-bottom: 2.8rem;
             }
         }
 
         #{$self}__check-forget {
             display: flex;
             justify-content: space-between;
+            padding: 3.2rem 0;
+
+            a {
+                font: var(--font-sm-text);
+                color: var(--color-primary-40);
+                font-weight: 700;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 

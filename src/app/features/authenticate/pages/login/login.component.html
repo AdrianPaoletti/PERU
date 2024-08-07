@@ -19,7 +19,13 @@
             />
         }
         <div class="login__check-forget">
-            <app-checkbox label="Recuérdame" id="rememberMe" />
+            <app-checkbox
+                label="Recuérdame"
+                id="rememberMe"
+                [isChecked]="isChecked"
+                (handleCheck)="handleCheck($event)"
+            />
+            <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
         <app-button
             type="submit"
